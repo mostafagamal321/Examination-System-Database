@@ -1,86 +1,69 @@
-Examination Management System – SQL Server
-Project Summary
+🎓 Examination Management System – SQL Server
+📌 Overview
 
-This project is a production-style relational database system that models a real academic Examination Management platform.
+This project is a production-style relational database system that simulates a real academic Examination Management System.
 
-It was designed to demonstrate strong skills in:
+It manages the complete academic lifecycle including:
 
-Relational data modeling
+Departments, Tracks, Branches, and Intakes
 
-Database normalization (3NF)
+Course and instructor assignments
 
-Complex relationship mapping
+Class scheduling and exam creation
 
-Analytical query design
+Question bank management (MCQ and True/False)
 
-Role-based data architecture
+Student exam participation and scoring
 
-Reporting layer implementation
+Role-based monitoring and reporting
 
-The system simulates how an academic institution manages structure, exams, instructors, and student performance at scale.
+The system is implemented using Microsoft SQL Server and follows relational modeling and database normalization best practices (3NF).
 
-Business Problem Simulated
+🗺 Entity Relationship Diagram (ERD)
 
-Academic institutions need a structured system to:
+The ERD represents the logical structure of the database including:
 
-Manage departments, tracks, branches, and intakes
+Primary and foreign keys
 
-Assign instructors to courses
+One-to-many relationships
 
-Organize classes and exams
+Many-to-many relationships using junction tables
 
-Store and evaluate student answers
+Clear role-based entity separation
 
-Monitor academic performance across branches and tracks
+The design reflects a normalized schema and structured academic hierarchy.
 
-Provide role-based access to stakeholders
+🔗 Database Relationship Mapping
 
-This database models that full lifecycle using a clean and scalable relational architecture.
+The relationship mapping diagram highlights how the main academic entities interact throughout the system.
 
-Key Technical Highlights
-
-Fully normalized schema (3NF)
-
-Strong referential integrity using primary and foreign keys
-
-Many-to-many relationships handled via junction tables
-
-Clear separation between transactional and reporting layers
-
-Aggregation and performance analytics using SQL Views
-
-Scalable structure ready for BI integration
-
-Entity Relationship Diagram (ERD)
-
-The ERD demonstrates:
-
-Structured academic hierarchy
-
-Role-based entity separation
-
-Junction table implementation
-
-Exam and scoring workflow
-
-Relationship Mapping
-
-Core academic workflow modeled in the system:
+Core workflow:
 
 Track → Course → Class → Exam → StudentExam → StudentAnswer
 
-This reflects:
+This structure demonstrates:
 
-End-to-end exam lifecycle
+Academic structure flow
 
-Instructor-course assignments
+Exam lifecycle management
 
 Student performance tracking
 
-Branch and intake segmentation
+Instructor and manager assignments
 
-Architecture Overview
-Core Entities
+🏗 Database Architecture
+
+The database is designed using a normalized relational model to ensure:
+
+Data integrity
+
+Elimination of redundancy
+
+Strong referential constraints
+
+Scalability and maintainability
+
+Core Tables
 
 User
 Student
@@ -108,17 +91,57 @@ ManagerTrack
 Inst_course
 ExamQuestion
 
-This design supports complex organizational structures while maintaining clean relational integrity.
+This structure supports complex organizational modeling while maintaining clean relational integrity.
 
-Reporting & Analytics Layer
+👥 Role-Based Design
 
-A dedicated reporting layer was built using SQL Views to simulate enterprise reporting practices.
+The system supports four main roles:
 
-Examples include:
+Admin
+
+Monitors overall system activity
+
+Reviews exam structure
+
+Tracks instructor workload
+
+Maintains data integrity
+
+Training Manager
+
+Monitors branch and track performance
+
+Reviews student academic results
+
+Tracks enrollment distribution
+
+Analyzes performance trends
+
+Instructor
+
+Manages assigned courses
+
+Reviews student exam results
+
+Manages question bank
+
+Tracks class performance
+
+Student
+
+Views profile information
+
+Accesses exam results
+
+Reviews submitted answers
+
+📊 Reporting Layer
+
+A dedicated reporting layer was implemented using SQL Views to separate transactional logic from analytical queries.
+
+Example analytical views include:
 
 System overview dashboard
-
-Instructor workload analysis
 
 Students per track per branch
 
@@ -126,6 +149,8 @@ Track performance summary
 
 Student ranking by total score
 
-Exam structure auditing
+Instructor workload analysis
+
+Student exam history
 
 This separation aligns with real-world data architecture patterns where operational data is isolated from analytical consumption.
