@@ -1,166 +1,124 @@
 Examination Management System – SQL Server
-Overview
+Project Summary
 
-This project is a relational database system that simulates a real academic Examination Management System.
+This project is a production-style relational database system that models a real academic Examination Management platform.
 
-It manages the academic structure and exam workflow including:
+It was designed to demonstrate strong skills in:
 
-Departments, Tracks, Branches, and Intakes
+Relational data modeling
 
-Course and instructor assignments
+Database normalization (3NF)
 
-Class and exam creation
+Complex relationship mapping
 
-Question bank management (MCQ and True/False)
+Analytical query design
 
-Student exam participation and scoring
+Role-based data architecture
 
-Role-based monitoring and reporting
+Reporting layer implementation
 
-The system is implemented using Microsoft SQL Server and follows normalization and relational database best practices.
+The system simulates how an academic institution manages structure, exams, instructors, and student performance at scale.
+
+Business Problem Simulated
+
+Academic institutions need a structured system to:
+
+Manage departments, tracks, branches, and intakes
+
+Assign instructors to courses
+
+Organize classes and exams
+
+Store and evaluate student answers
+
+Monitor academic performance across branches and tracks
+
+Provide role-based access to stakeholders
+
+This database models that full lifecycle using a clean and scalable relational architecture.
+
+Key Technical Highlights
+
+Fully normalized schema (3NF)
+
+Strong referential integrity using primary and foreign keys
+
+Many-to-many relationships handled via junction tables
+
+Clear separation between transactional and reporting layers
+
+Aggregation and performance analytics using SQL Views
+
+Scalable structure ready for BI integration
 
 Entity Relationship Diagram (ERD)
 
-The ERD represents the logical structure of the database including:
+The ERD demonstrates:
 
-Primary and foreign keys
+Structured academic hierarchy
 
-One-to-many relationships
+Role-based entity separation
 
-Many-to-many relationships using junction tables
+Junction table implementation
 
-Role-based entities
+Exam and scoring workflow
 
-The diagram reflects a normalized design (3NF) and clearly shows the academic hierarchy and exam workflow.
+Relationship Mapping
 
-
-![2 ERD](https://github.com/user-attachments/assets/7cc2f53f-86f8-40f0-bf0d-a39af79b06ca)
-
-
-Database Relationship Mapping
-
-The relationship mapping diagram focuses on how the main academic entities connect across the system.
-
-Example workflow:
+Core academic workflow modeled in the system:
 
 Track → Course → Class → Exam → StudentExam → StudentAnswer
 
-This mapping shows:
+This reflects:
 
-Academic structure flow
+End-to-end exam lifecycle
 
-Exam lifecycle
+Instructor-course assignments
 
 Student performance tracking
 
-Instructor and manager assignments
+Branch and intake segmentation
 
-
-![3 Mapping_page-0001](https://github.com/user-attachments/assets/3b7e8b26-bba2-415a-aa25-0db2f06cd733)
-
-Database Architecture
-
-The database is designed using a normalized relational model to ensure:
-
-Data integrity
-
-Elimination of redundancy
-
-Strong referential constraints
-
-Scalability
-
-Core Tables
+Architecture Overview
+Core Entities
 
 User
-
 Student
-
 Instructor
-
 TrainingManager
-
 Branch
-
 Department
-
 Track
-
 Course
-
 Class
-
 Intake
-
 Exam
-
 Question
-
 MCQ
-
 TrueFalseQuestion
-
 StudentExam
-
 StudentAnswer
 
 Junction Tables
 
 BranchTrack
-
 TrackDepartment
-
 ManagerBranch
-
 ManagerTrack
-
 Inst_course
-
 ExamQuestion
 
-Role-Based Design
+This design supports complex organizational structures while maintaining clean relational integrity.
 
-The system supports four roles:
+Reporting & Analytics Layer
 
-Admin
+A dedicated reporting layer was built using SQL Views to simulate enterprise reporting practices.
 
-Monitors full system activity
+Examples include:
 
-Reviews exam structure
+System overview dashboard
 
-Monitors instructor workload
-
-Training Manager
-
-Monitors branch and track performance
-
-Reviews student performance
-
-Tracks enrollment distribution
-
-Instructor
-
-Manages assigned courses
-
-Reviews student exam results
-
-Manages question bank
-
-Student
-
-Views profile information
-
-Sees exam results
-
-Reviews submitted answers
-
-Reporting Layer
-
-A reporting layer was implemented using SQL Views to separate transactional logic from analytical queries.
-
-Example views include:
-
-System overview
+Instructor workload analysis
 
 Students per track per branch
 
@@ -168,12 +126,6 @@ Track performance summary
 
 Student ranking by total score
 
-Instructor workload
+Exam structure auditing
 
-Student exam results
-
-This approach follows real-world database design practices.
-
-Row-Level Security implementation
-
-Data warehouse layer for historical analysis
+This separation aligns with real-world data architecture patterns where operational data is isolated from analytical consumption.
