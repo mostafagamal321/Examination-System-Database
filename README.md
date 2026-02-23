@@ -160,7 +160,11 @@ The system follows a layered relational architecture:
 
 ## ER Diagram
 
-Replace with exported diagram from SSMS or Draw.io.
+![2 ERD](https://github.com/user-attachments/assets/e7d4db45-eeea-4120-8b7b-4c75c9d36a49)
+
+---
+## Mapping ERD
+![3 Mapping_page-0001](https://github.com/user-attachments/assets/52c4e56e-49ee-440c-bbd2-c36edcd37daf)
 
 ---
 
@@ -177,4 +181,101 @@ Replace with exported diagram from SSMS or Draw.io.
 Clone repository:
 
 ```bash
-git clone https://github.com/your-username/examination-system-db.git
+git clone https://github.com/mostafagamal321/Examination-System-Database
+```
+### Create database:
+
+CREATE DATABASE ExaminationSystem;
+GO
+USE ExaminationSystem;
+
+Execute scripts in order:
+
+- Tables
+
+- Constraints
+
+- Triggers
+
+- Stored Procedures
+
+- Views
+
+
+### Verify installation:
+
+SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES;
+Usage
+Register a Student
+EXEC sp_RegisterStudent
+    @Username = 'student1',
+    @Password = 'password123',
+    @FullName = 'John Doe',
+    @Email = 'john@email.com',
+    @BranchID = 1,
+    @TrackID = 2,
+    @IntakeID = 3;
+Create Random Exam
+EXEC sp_CreateRandomExam
+    @CourseID = 1,
+    @ClassID = 2,
+    @StartTime = '10:00',
+    @EndTime = '12:00',
+    @ExamType = 'Final',
+    @Allowance = '2 Hours',
+    @ExamDate = '2026-03-10',
+    @NumMCQ = 10,
+    @NumTF = 5,
+    @NumText = 2;
+Student Submit Answer
+EXEC sp_SubmitAnswer
+    @StudentID = 5,
+    @ExamID = 3,
+    @QuestionID = 12,
+    @AnswerText = 'True';
+Calculate Final Result
+EXEC sp_FinalExamResult
+    @StudentID = 5,
+    @ExamID = 3;
+    
+### Testing & Deployment:
+#### *Testing Strategy*
+
+-- Boundary testing for grade limits
+-- Constraint violation testing
+-- Time-window validation tests
+-- Duplicate submission prevention
+-- Exam overlap validation
+-- Trigger behavior verification
+
+####Example negative test:
+-- Attempt submission outside exam window
+EXEC sp_SubmitAnswer
+    @StudentID = 5,
+    @ExamID = 3,
+    @QuestionID = 1,
+    @AnswerText = 'A';
+
+Expected: Trigger rejection.
+
+### Deployment
+#### For production:
+- Backup current database
+- Generate full schema script
+
+Deploy via:
+- DACPAC
+- SQL Migration scripts
+- CI/CD pipeline
+- Configure roles and permissions
+- Dependencies
+- Microsoft SQL Server 2019+
+- T-SQL
+- SQL Server Management Studio (SSMS)
+- Git
+- Draw.io (for ERD design)
+
+GitHub: https://github.com/mostafagamal321
+LinkedIn: https://www.linkedin.com/in/mostafa-gamal-hamed/
+
+Email: mostafagamal800@gmail.com
