@@ -204,14 +204,16 @@ Execute scripts in order:
 
 ### Verify installation:
 
-Usage
+- Usage
 Verify Installation
-SELECT COUNT(*) 
-FROM INFORMATION_SCHEMA.TABLES;
+```sql 
+SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES;
+```
 
 Expected: Returns total number of created tables (30+).
 
-Register a Student
+- Register a Student:
+```sql
 EXEC sp_RegisterStudent
     @Username = 'student1',
     @Password = 'password123',
@@ -220,7 +222,7 @@ EXEC sp_RegisterStudent
     @BranchID = 1,
     @TrackID = 2,
     @IntakeID = 3;
-
+```
 Expected: Student record inserted successfully with enforced role constraints.
 
 Create Random Exam
@@ -264,7 +266,7 @@ Expected: Final grade calculated and stored in CourseResult.
 -- Exam overlap validation
 -- Trigger behavior verification
 
-####Example negative test:
+#### Example negative test:
 -- Attempt submission outside exam window
 EXEC sp_SubmitAnswer
     @StudentID = 5,
