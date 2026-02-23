@@ -263,12 +263,11 @@ Expected: Final grade calculated and stored in CourseResult.
 ### Testing & Deployment:
 #### *Testing Strategy*
 
--- Boundary testing for grade limits
--- Constraint violation testing
--- Time-window validation tests
--- Duplicate submission prevention
--- Exam overlap validation
--- Trigger behavior verification
+- Boundary testing for grade limits
+- Constraint violation testing
+- Duplicate submission prevention
+- Exam overlap validation
+- Trigger behavior verification
 
 #### Example negative test:
 -- Attempt submission outside exam window
