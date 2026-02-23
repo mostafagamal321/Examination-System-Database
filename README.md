@@ -91,20 +91,20 @@ The system follows a layered relational architecture:
 
 ### 1. Data Layer
 
-- 30+ normalized tables  
+- 27 normalized tables  
 - Primary & Foreign Keys  
 - Composite relationships  
 - Unique and Check Constraints  
 
 ### 2. Logic Layer
 
-- 25+ Stored Procedures  
-- 8+ Triggers  
+- 26 Stored Procedures  
+- 8 Triggers  
 - Encapsulated CRUD logic  
 - Controlled API-style operations  
 
 ### 3. Reporting & Monitoring Layer
-
+- 26 views
 - Instructor Views  
 - Student Views  
 - Manager Views  
