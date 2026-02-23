@@ -204,8 +204,13 @@ Execute scripts in order:
 
 ### Verify installation:
 
-SELECT COUNT(*) FROM INFORMATION_SCHEMA.TABLES;
 Usage
+Verify Installation
+SELECT COUNT(*) 
+FROM INFORMATION_SCHEMA.TABLES;
+
+Expected: Returns total number of created tables (30+).
+
 Register a Student
 EXEC sp_RegisterStudent
     @Username = 'student1',
@@ -215,6 +220,9 @@ EXEC sp_RegisterStudent
     @BranchID = 1,
     @TrackID = 2,
     @IntakeID = 3;
+
+Expected: Student record inserted successfully with enforced role constraints.
+
 Create Random Exam
 EXEC sp_CreateRandomExam
     @CourseID = 1,
@@ -227,16 +235,24 @@ EXEC sp_CreateRandomExam
     @NumMCQ = 10,
     @NumTF = 5,
     @NumText = 2;
+
+Expected: Exam created with randomized question allocation.
+
 Student Submit Answer
 EXEC sp_SubmitAnswer
     @StudentID = 5,
     @ExamID = 3,
     @QuestionID = 12,
     @AnswerText = 'True';
+
+Expected: Answer stored if submission time is valid.
+
 Calculate Final Result
 EXEC sp_FinalExamResult
     @StudentID = 5,
     @ExamID = 3;
+
+Expected: Final grade calculated and stored in CourseResult.
     
 ### Testing & Deployment:
 #### *Testing Strategy*
