@@ -174,7 +174,9 @@ The system follows a layered relational architecture:
 
 - Microsoft SQL Server 2019+  
 - SQL Server Management Studio (SSMS)  
-- Windows Environment (recommended)  
+- Windows Environment (recommended)
+  
+---
 
 ### Setup Steps
 
@@ -192,15 +194,12 @@ USE ExaminationSystem;
 Execute scripts in order:
 
 - Tables
-
 - Constraints
-
 - Triggers
-
 - Stored Procedures
-
 - Views
-
+  
+---
 
 ### Verify installation:
 
@@ -300,5 +299,4 @@ Deploy via:
 
 GitHub: https://github.com/mostafagamal321
 LinkedIn: https://www.linkedin.com/in/mostafa-gamal-hamed/
-
 Email: mostafagamal800@gmail.com
