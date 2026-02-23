@@ -225,7 +225,8 @@ EXEC sp_RegisterStudent
 ```
 Expected: Student record inserted successfully with enforced role constraints.
 
-Create Random Exam
+Create Random Exam:
+```sql
 EXEC sp_CreateRandomExam
     @CourseID = 1,
     @ClassID = 2,
@@ -237,23 +238,26 @@ EXEC sp_CreateRandomExam
     @NumMCQ = 10,
     @NumTF = 5,
     @NumText = 2;
-
+```
 Expected: Exam created with randomized question allocation.
 
-Student Submit Answer
+Student Submit Answer:
+```sql
 EXEC sp_SubmitAnswer
     @StudentID = 5,
     @ExamID = 3,
     @QuestionID = 12,
     @AnswerText = 'True';
+```
 
 Expected: Answer stored if submission time is valid.
 
 Calculate Final Result
+```sql
 EXEC sp_FinalExamResult
     @StudentID = 5,
     @ExamID = 3;
-
+```
 Expected: Final grade calculated and stored in CourseResult.
     
 ### Testing & Deployment:
@@ -268,11 +272,13 @@ Expected: Final grade calculated and stored in CourseResult.
 
 #### Example negative test:
 -- Attempt submission outside exam window
+```sql
 EXEC sp_SubmitAnswer
     @StudentID = 5,
     @ExamID = 3,
     @QuestionID = 1,
     @AnswerText = 'A';
+```
 
 Expected: Trigger rejection.
 
