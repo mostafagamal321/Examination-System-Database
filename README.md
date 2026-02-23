@@ -297,6 +297,4 @@ Deploy via:
 - Git
 - Draw.io (for ERD design)
 
-GitHub: https://github.com/mostafagamal321
-LinkedIn: https://www.linkedin.com/in/mostafa-gamal-hamed/
-Email: mostafagamal800@gmail.com
+
