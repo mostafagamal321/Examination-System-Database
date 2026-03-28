@@ -129,7 +129,6 @@ The system follows a layered relational architecture:
 - `Student`
 - `Instructor`
 - `TrainingManager`
-- Phone number tables
 
 #### Courses & Questions
 - `Course`
